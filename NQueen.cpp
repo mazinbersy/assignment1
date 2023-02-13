@@ -1,6 +1,6 @@
 #include "NQueen.h"
 
-void NQueen::printBoard(int board[N][N]) {
+void printBoard(int board[N][N]) {
    for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++)
          cout << board[i][j] << " ";
@@ -8,7 +8,7 @@ void NQueen::printBoard(int board[N][N]) {
    }
 }
 
-bool NQueen::isValid(int board[N][N], int row, int col) {
+bool isValid(int board[N][N], int row, int col) {
    for (int i = 0; i < col; i++)    //check whether there is queen in the left or not
       if (board[row][i])
          return false;
@@ -21,7 +21,7 @@ bool NQueen::isValid(int board[N][N], int row, int col) {
    return true;
 }
 
-bool NQueen::solveNQueen(int board[N][N], int col) {
+bool solveNQueen(int board[N][N], int col) {
    if (col >= N)           //when N queens are placed successfully
       return true;
    for (int i = 0; i < N; i++) {     //for each row, check placing of queen is possible or not
@@ -36,7 +36,7 @@ bool NQueen::solveNQueen(int board[N][N], int col) {
    return false;       //when no possible order is found
 }
 
-bool NQueen::checkSolution() {
+bool checkSolution() {
    int board[N][N];
    for(int i = 0; i<N; i++)
       for(int j = 0; j<N; j++)
